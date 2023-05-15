@@ -1,0 +1,469 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+$fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
+
+
+// Couleurs
+$player1:#E3170A;
+$accent_color:#1900ef;
+$bg-light : #FBF9F7;
+$live-color:#7FFF00;
+$font  :'Dosis', sans-serif;
+
+html{
+    font-family: $font;
+}
+body{
+    background-color: $bg-light;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.swal2-confirm, .swal2-styled, .swal2-default-outline, .swal2-html-container,.btn,.btn-1,.btn-1:hover{
+    font-family: $font !important;
+}
+.swal2-input{
+    font-weight: bold !important;
+}
+
+#pseudo-player{
+    font-size: 2em;
+    font-family: $font;
+    color:black;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px #59B300, 0 0 20px #59B300, 0 0 30px #59B300, 0 0 40px #59B300, 0 0 50px #59B300, 0 0 60px #59B300, 0 0 70px #59B300;
+    }
+    to {
+      text-shadow: 0 0 200px $live-color, 0 0 30px $live-color, 0 0 40px $live-color, 0 0 50px $live-color, 0 0 60px $live-color, 0 0 70px $live-color, 0 0 200px $live-color;
+    }
+  }
+
+
+#plateau{
+    padding-top: 5%;
+    display: none;
+    background-color: $bg-light;
+}
+.case {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #F2F2F2;
+    margin: 5px;
+    border: 1px solid $bg-light;
+    transition: background-color 0.5s ease-out; /* Ajoute une transition de 0,5 seconde à la propriété "background-color" */ 
+    &:hover{
+        cursor:pointer !important;
+    }
+  }
+
+
+.container-fluid {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+#inscription{
+    background-color: #1900ef;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .6s ease-in-out;
+}
+#inscription2{
+    display: none;
+    background-color: #1900ef;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .6s ease-in-out;
+}
+#modal-box{
+    margin-top: 15% !important;
+}
+#search-player{
+  display: none;
+}
+#status{
+    padding-top: 10%;
+}
+#infos-play{
+    display: none;
+    margin-top: 1%;
+}
+#countdown{
+    color: #1900EF;
+    font-weight: 900;
+}
+.btn-primary{
+    background-color: #1900ef !important;
+}
+.btn-secondary{
+    background-color: $player1 !important;
+}
+
+#status{
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+#footer{
+    display: none;
+}
+
+#abandon{
+    margin-top: 5%;
+}
+
+#nouvellePartie{
+    // font-size: 2em;
+    // height: 5em;
+    // width: 5em;
+    background-color: #1900EF;
+    &:before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\2b";
+        margin-right: 5px;
+      }
+}
+
+#nouvellePartie:hover{
+    transform: scale(1.9,1.9) !important;
+    cursor: none !important;
+}
+#connexion{
+    background-color: #E3170A !important;
+    color: white;
+    &:before {
+        font-family: "Font Awesome 5 Free" !important;
+        font-weight: 900;
+        content: "\f2f6";
+        margin-right: 5px;
+      }
+}
+#connexion:hover{
+    transform: scale(1.9,1.9) !important;
+    cursor: none !important;
+}
+#playmain{
+    display: none;
+}
+
+#play{
+    background-color: #17C3B2 !important;
+    color: white;
+    
+    &:before {
+        font-family: "Font Awesome 5 Free" !important;
+        font-weight: 900;
+        content: "\f11b";
+        margin-right: 5px;
+      }
+}
+#play:hover{
+    transform: scale(1.9,1.9) !important;
+    cursor: none !important;
+}
+
+.btn {
+    transition: all .2s ease-in-out;
+}
+.btn-circle.btn-xl {
+    width: 120px;
+    height: 120px;
+    padding: 13px 18px;
+    border-radius: 60px;
+    font-size: 15px;
+    text-align: center;
+}
+
+  .custom-btn {
+
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: $font;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+
+  
+  /* 1 */
+  .btn-1 {
+    background: rgb(6,14,131);
+    background: linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);
+    border: none;
+  }
+  .btn-1:hover {
+     background: rgb(0,3,255);
+  background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+  }
+
+h1{
+    font-size: 3.4em;
+    font-weight: 900;
+    text-align: center !important;
+    font-family: $font;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.gameTitle{
+    font-family: 'Press Start 2P', cursive !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.swal2-title{
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.open-dev {
+    color: #ffffff;
+}
+
+.open-dev .wrap-two-up {
+    position: relative;
+}
+
+.open-dev-radar {
+    position: relative;
+    width: 100%;
+    padding-top: 400px;
+}
+
+.open-dev-badge {
+    position: absolute;
+    left: 48%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    animation-duration: .9s;
+    animation-name: jello; 
+    animation-iteration-count: infinite;
+    font-size: 50px;
+}
+
+.open-dev-radar-pulse {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.open-dev-radar-pulse::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(0);
+    border-radius: 50%;
+    border: solid 1px rgba(0, 165, 216, 0.74);
+    background-image: radial-gradient( circle farthest-corner, rgba(0, 162, 213, 0) 52%, rgba(0, 162, 213, 0.62) 100%);
+    animation-duration: 3.2s;
+    animation-name: pulsation; 
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+.open-dev-radar-pulse:nth-child(4) {
+    width: calc(120 / 16 * 1rem);
+    height: calc(120 / 16 * 1rem);
+}
+
+.open-dev-radar-pulse:nth-child(3) {
+    width: calc(190 / 16 * 1rem);
+    height: calc(190 / 16 * 1rem);
+}
+
+.open-dev-radar-pulse:nth-child(3)::after {
+    animation-delay: 0.2s;
+}
+
+.open-dev-radar-pulse:nth-child(2) {
+    width: calc(270 / 16 * 1rem);
+    height: calc(270 / 16 * 1rem);
+}
+
+.open-dev-radar-pulse:nth-child(2)::after {
+    animation-delay: 0.4s;
+}
+
+.open-dev-radar-pulse:nth-child(1) {
+    width: calc(370 / 16 * 1rem);
+    height: calc(370 / 16 * 1rem);
+}
+
+.open-dev-radar-pulse:nth-child(1)::after {
+    animation-delay: 0.6s;
+}
+
+@keyframes pulsation {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    90% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+}
+
+
+
+// Joueur en ligne 
+.recordLed {
+	width: 10px;
+	height: 10px;
+	background-color: $live-color;
+	border-radius: 50%;
+}
+
+.live {
+  animation: blinking 1s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+}
+
+@keyframes blinking {  
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+
+.compte-connect{
+
+      &::before{
+
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f0e7";
+        color: $live-color;
+        font-size: 15px;
+        margin: 20px;
+        animation: pulsation 2s infinite;
+      
+      }
+      background-color: transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+      //filter: drop-shadow(0px 0px 1px);
+}
+
+.suppression-btn {
+    &:before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f1f8";
+        font-size: 10px;
+        margin: 10px;
+        padding-bottom: 15px;
+      }
+    cursor: pointer;
+    border-radius: 10px;
+    //color: $accent_color;
+    background-color: $player1;
+    color: $bg-light;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    outline: 0 !important;
+  };
+
+#suppression-btn-all{
+    margin: 5%;
+    background-color: $accent_color !important;
+    padding: 3%;
+border: none;
+}
+  
+  @keyframes rubberBand {
+    from {
+      transform: scaleX(1) scaleY(1);
+    }
+  
+    30% {
+      transform: scaleX(1.25) scaleY(0.75);
+    }
+  
+    40% {
+      transform: scaleX(0.75) scaleY(1.25);
+    }
+  
+    50% {
+      transform: scaleX(1.15) scaleY(0.85);
+    }
+  
+    to {
+      transform: scaleX(1) scaleY(1);
+    }
+  }
+
+.darkmode-btn {
+    position: relative;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    border: none !important;
+    outline: none !important;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: all 300ms;
+    transform: scale(3);
+}
+
+.darkmode-btn:hover {
+    transform: scale(3.2);
+}
+
+.darkmode-btn:active {
+    transform: scale(2.8);
+}
+
+  .animation {
+    animation: BackgroundSpread 500ms backwards;
+}
+
+@keyframes BackgroundSpread {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: max(141.42vw, 141.42vh);
+        height: max(141.42vw, 141.42vh);
+    }
+}

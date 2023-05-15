@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔵4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="scss/style.css">
+
+    <!-- Chargement de Font Awesome CSS -->
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.css">
+
+    <!-- Chargement de Font Awesome JS -->
+    <script defer src="/fontawesome-free-6.4.0-web/js/all.min.js"></script>
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+  </head>
+<body>
+  
+    <!-- Home -->
+    <div class="container-fluid" id="main">
+        <!-- Titre jeu -->
+        <div class="row mt-5">
+            <div class="col mt-5 mb-5 text-center">
+                <h1 class="animate__bounce animate__animated  animate__duration-1s gameTitle">Puissance 4</h1>
+                <p id="pseudo-player" class=""><div class="ledContainer">
+                  <i class="recordLed live"></i><span class="liveText">&nbsp;</span>
+                </div></p>
+            </div>
+        </div>
+        <!-- Boutons d'option -->
+        <div class="row mt-5 mb-4 p-0">
+            <div class="col text-center">
+                <button type="button" class="btn btn-primary btn-circle btn-xl text-center" id="nouvellePartie" onclick="inscriptionForm()">Inscription</button>
+            </div>
+            <div class="col text-center">
+                <button type="button" class="btn btn-circle btn-xl text-center" id="connexion" onclick="connexion()">Connect</button>
+            </div>
+            <!--   -->
+            <div class="col text-center" id="playmain">
+              <button type="button" class="btn btn-circle btn-xl text-center " id="play">Match Making</button>
+          </div>
+        </div>
+        <div class="container mt-5 pt-5" id="footer">
+          <div class="row mt-5">
+            <div class="col text-center mt-5">
+              <a href="http://edwin-barnabot.com" class="">Powered By 
+              <img src="img/pdc-logo.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+
+    <!-- Jeux puissance 4 -->
+    <div class="container-fluid mt-5" id="plateau">
+        <div class="row justify-content-center">
+          <div class="col-md-7 col-xs-12">
+
+            <!-- Joueur actif -->
+              <div class="col text-center">
+                  <h1>Tour de : </h1> <p id ="player"></p>
+              </div>
+
+            <div class="row">
+              <!-- animate__backInDown -->
+              <div class="col" data-value="0">
+                <div class="case 1  animate__animated  animate__duration-0.5s" id="c01"></div>
+                <div class="case 2  animate__animated  animate__duration-0.5s" id="c02"></div>
+                <div class="case 3  animate__animated  animate__duration-0.5s" id="c03"></div>
+                <div class="case 4  animate__animated  animate__duration-0.5s" id="c04"></div>
+                <div class="case 5  animate__animated  animate__duration-0.5s" id="c05"></div>
+                <div class="case 6  animate__animated  animate__duration-0.5s" id="c06"></div>
+              </div>
+              <div class="col" data-value="1">
+                <div class="case 1  animate__animated  animate__duration-0.5s" id="c11"></div>
+                <div class="case 2  animate__animated  animate__duration-0.5s" id="c12"></div>
+                <div class="case 3  animate__animated  animate__duration-0.5s" id="c13"></div>
+                <div class="case 4  animate__animated  animate__duration-0.5s" id="c14"></div>
+                <div class="case 5  animate__animated  animate__duration-0.5s" id="c15"></div>
+                <div class="case 6  animate__animated  animate__duration-0.5s" id="c16"></div>
+              </div>
+              <div class="col" data-value="2">
+                <div class="case 1  animate__animated  animate__duration-0.5s" id="c21"></div>
+                <div class="case 2  animate__animated  animate__duration-0.5s" id="c22"></div>
+                <div class="case 3  animate__animated  animate__duration-0.5s" id="c23"></div>
+                <div class="case 4  animate__animated  animate__duration-0.5s" id="c24"></div>
+                <div class="case 5  animate__animated  animate__duration-0.5s" id="c25"></div>
+                <div class="case 6  animate__animated  animate__duration-0.5s" id="c26"></div>
+              </div>
+              <div class="col" data-value="3">
+                <div class="case 1  animate__animated  animate__duration-0.5s" id="c31"></div>
+                <div class="case 2  animate__animated  animate__duration-0.5s" id="c32"></div>
+                <div class="case 3  animate__animated  animate__duration-0.5s" id="c33"></div>
+                <div class="case 4  animate__animated  animate__duration-0.5s" id="c34"></div>
+                <div class="case 5  animate__animated  animate__duration-0.5s" id="c35"></div>
+                <div class="case 6  animate__animated  animate__duration-0.5s" id="c36"></div>
+              </div>
+              <div class="col" data-value="4">
+                <div class="case 1  animate__animated  animate__duration-0.5s" id="c41"></div>
+                <div class="case 2  animate__animated  animate__duration-0.5s" id="c42"></div>
+                <div class="case 3  animate__animated  animate__duration-0.5s" id="c43"></div>
+                <div class="case 4  animate__animated  animate__duration-0.5s" id="c44"></div>
+                <div class="case 5  animate__animated  animate__duration-0.5s" id="c45"></div>
+                <div class="case 6  animate__animated  animate__duration-0.5s" id="c46"></div>
+              </div>
+              <div class="col" data-value="5">
+                <div class="case 1  animate__animated  animate__duration-0.5s" id="c51"></div>
+                <div class="case 2  animate__animated  animate__duration-0.5s" id="c52"></div>
+                <div class="case 3  animate__animated  animate__duration-0.5s" id="c53"></div>
+                <div class="case 4  animate__animated  animate__duration-0.5s" id="c54"></div>
+                <div class="case 5  animate__animated  animate__duration-0.5s" id="c55"></div>
+                <div class="case 6  animate__animated  animate__duration-0.5s" id="c56"></div>
+              </div>
+              <div class="col" data-value="6">
+                <div class="case 1  animate__animated  animate__duration-0.5s" id="c61"></div>
+                <div class="case 2  animate__animated  animate__duration-0.5s" id="c62"></div>
+                <div class="case 3  animate__animated  animate__duration-0.5s" id="c63"></div>
+                <div class="case 4  animate__animated  animate__duration-0.5s" id="c64"></div>
+                <div class="case 5  animate__animated  animate__duration-0.5s" id="c65"></div>
+                <div class="case 6  animate__animated  animate__duration-0.5s" id="c66"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col text-center">
+          <button id="abandon" class="custom-btn btn-1" onclick="abandon()">Quitter 🏳️ </button>
+        </div>
+        <div class="col text-center">
+          <h1 class="animate__ animate__animated  animate__delay-0.5s animate__infinite	infinite gameTitle mt-5">Puissance 4</h1>
+      </div>
+    </div>
+
+
+
+    <!-- Vue Recherche d'un joueur -->
+    <div class="container-fluid" id="search-player">
+        <!-- Affiche au joueur l'état de la recherche de joueur -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 id="status">Recherche d'un adversaire en cours
+                </h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-12 ">
+              <section id="open-dev" class="open-dev">
+                <div class="wrap-two-up wrap-two-up-middle">
+                  <div class="content content-two-up">
+                    <div class="open-dev-radar text-center">
+                      <div class="open-dev-radar-pulse"></div>
+                      <div class="open-dev-radar-pulse"></div>
+                      <div class="open-dev-radar-pulse"></div>
+                      <div class="open-dev-radar-pulse"></div>
+                      <div class="open-dev-badge">🔍</div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Information partie trouvé -->
+    <div class="container-fluid" id="infos-play">
+        <div class="row info-before-game" id ="infos-play-child">
+            <div class="col-12 justify-content-center text-center">
+                <p>La partie va démarrer dans : </p>
+                <span id="countdown"></span>
+            </div>
+            <div class="col-12 justify-content-center text-center">
+                <button class="mt-5 custom-btn btn-1" onclick="playGame()" type="button">Rejoindre la partie 🎮</button>                        
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Chargement de SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "drag-object": "^1.0.3"
+  }
+}
